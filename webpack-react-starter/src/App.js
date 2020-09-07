@@ -12,7 +12,6 @@ function App() {
 
   const slides = [];
   var max = 5;
-  var slidesOnScreen;
   var count = 1;
   for (let i = 0; i < max; i += 1) {
     slides.push(
@@ -38,10 +37,6 @@ function App() {
     );
   }
 
-  function handleChange() {
-    count=slidesOnScreen;
-  }
-  
   return (
     <React.Fragment>
       <div>Slider Application</div>
@@ -64,15 +59,6 @@ function App() {
       >
         {slides}
       </Swiper>
-      <div>
-      <label>Slides on screen   </label>
-      <input type="text" pattern="[0-9]*" className="form-control" placeholder="enter number" name="Slides on screen" value={slidesOnScreen}/> &nbsp;
-      <button className="btn btn-primary btn-lg btn-lg" type={"submit"} onClick={handleChange()}>Submit</button> &nbsp;&nbsp;&nbsp;&nbsp;
-
-      <label>Go to slide   </label>
-      <input type="text" pattern="[0-9]*" className="form-control" placeholder="enter number" name="Go to slide" value={slidesOnScreen}/> &nbsp;
-      <button className="btn btn-primary btn-lg btn-lg" type={"submit"} onClick={handleChange()}>Submit</button>
-      </div>
     </React.Fragment>
   );
 }
